@@ -1,0 +1,449 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d45a88679e5168395a65.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "flutter",
+					"jsonFile" : "directory-flutter-Debug-79e0260f2327d8493c28.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "flutter",
+					"targetIndexes" : 
+					[
+						2,
+						5,
+						6
+					]
+				},
+				{
+					"build" : "runner",
+					"jsonFile" : "directory-runner-Debug-86f38b7dcb6f33eb04e4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "runner",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "plugins/bitsdojo_window_windows",
+					"jsonFile" : "directory-plugins.bitsdojo_window_windows-Debug-3d42c628de69c85c7011.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "flutter/ephemeral/.plugin_symlinks/bitsdojo_window_windows/windows",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "plugins/flutter_inappwebview_windows",
+					"jsonFile" : "directory-plugins.flutter_inappwebview_windows-Debug-a7e37ea3941bc8a1bfec.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "flutter/ephemeral/.plugin_symlinks/flutter_inappwebview_windows/windows",
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				},
+				{
+					"build" : "plugins/media_kit_libs_windows_video",
+					"jsonFile" : "directory-plugins.media_kit_libs_windows_video-Debug-b3d0041bb494d73a34fd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "flutter/ephemeral/.plugin_symlinks/media_kit_libs_windows_video/windows",
+					"targetIndexes" : 
+					[
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"build" : "plugins/media_kit_video",
+					"jsonFile" : "directory-plugins.media_kit_video-Debug-a0f79299085ba2c5be04.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "flutter/ephemeral/.plugin_symlinks/media_kit_video/windows",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "plugins/screen_retriever",
+					"jsonFile" : "directory-plugins.screen_retriever-Debug-d2b3b3ff516ab7be9d33.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "flutter/ephemeral/.plugin_symlinks/screen_retriever/windows",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "plugins/url_launcher_windows",
+					"jsonFile" : "directory-plugins.url_launcher_windows-Debug-b718b41db8fa69359ace.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "flutter/ephemeral/.plugin_symlinks/url_launcher_windows/windows",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "plugins/volume_controller",
+					"jsonFile" : "directory-plugins.volume_controller-Debug-cdffd51d4d7018bda358.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 8,
+					"source" : "flutter/ephemeral/.plugin_symlinks/volume_controller/windows",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "plugins/window_manager",
+					"jsonFile" : "directory-plugins.window_manager-Debug-96d174f243515dd0bb1a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 9,
+					"source" : "flutter/ephemeral/.plugin_symlinks/window_manager/windows",
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "dimenx",
+					"targetIndexes" : 
+					[
+						2,
+						5,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "runner",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "bitsdojo_window_windows",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "flutter_inappwebview_windows",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "media_kit_libs_windows_video",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7,
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "media_kit_video",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "screen_retriever",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "url_launcher_windows",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "volume_controller",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						10
+					],
+					"name" : "window_manager",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "DimenX::@056c4f61b0156d1d9b06",
+					"jsonFile" : "target-DimenX-Debug-4491c3b2662381e21e79.json",
+					"name" : "DimenX",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "bitsdojo_window_windows_plugin::@abb27a04466921711d8d",
+					"jsonFile" : "target-bitsdojo_window_windows_plugin-Debug-0a8f634d113888ddd540.json",
+					"name" : "bitsdojo_window_windows_plugin",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "flutter_assemble::@2bb09fbb03a373b2cb34",
+					"jsonFile" : "target-flutter_assemble-Debug-29f9f19596fc4e2071dc.json",
+					"name" : "flutter_assemble",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "flutter_inappwebview_windows_DEPENDENCIES_DOWNLOAD::@05c90eb2d2ee6783f6e1",
+					"jsonFile" : "target-flutter_inappwebview_windows_DEPENDENCIES_DOWNLOAD-Debug-8139d6ef664a389dcf4e.json",
+					"name" : "flutter_inappwebview_windows_DEPENDENCIES_DOWNLOAD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "flutter_inappwebview_windows_plugin::@05c90eb2d2ee6783f6e1",
+					"jsonFile" : "target-flutter_inappwebview_windows_plugin-Debug-d9e54ee159d544487553.json",
+					"name" : "flutter_inappwebview_windows_plugin",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "flutter_wrapper_app::@2bb09fbb03a373b2cb34",
+					"jsonFile" : "target-flutter_wrapper_app-Debug-b83f34ef9b44a738684f.json",
+					"name" : "flutter_wrapper_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "flutter_wrapper_plugin::@2bb09fbb03a373b2cb34",
+					"jsonFile" : "target-flutter_wrapper_plugin-Debug-153f8cd70cb86e08ed0d.json",
+					"name" : "flutter_wrapper_plugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "media_kit_libs_windows_video_ANGLE_EXTRACT::@01cf7ed1c2ceb4e60ae7",
+					"jsonFile" : "target-media_kit_libs_windows_video_ANGLE_EXTRACT-Debug-2ee7bce2bbfc797afe9c.json",
+					"name" : "media_kit_libs_windows_video_ANGLE_EXTRACT",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "media_kit_libs_windows_video_LIBMPV_EXTRACT::@01cf7ed1c2ceb4e60ae7",
+					"jsonFile" : "target-media_kit_libs_windows_video_LIBMPV_EXTRACT-Debug-d342dc07541ab507484f.json",
+					"name" : "media_kit_libs_windows_video_LIBMPV_EXTRACT",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "media_kit_libs_windows_video_plugin::@01cf7ed1c2ceb4e60ae7",
+					"jsonFile" : "target-media_kit_libs_windows_video_plugin-Debug-89378eb78e45d01ca557.json",
+					"name" : "media_kit_libs_windows_video_plugin",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "media_kit_video_plugin::@c00bbff764bea0739578",
+					"jsonFile" : "target-media_kit_video_plugin-Debug-8d2774058b02de33aaf1.json",
+					"name" : "media_kit_video_plugin",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "screen_retriever_plugin::@3807a39ae1c9dc0b6e21",
+					"jsonFile" : "target-screen_retriever_plugin-Debug-fb09f59c865055cb8df0.json",
+					"name" : "screen_retriever_plugin",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "url_launcher_windows_plugin::@82e8e937a0da8e6132e4",
+					"jsonFile" : "target-url_launcher_windows_plugin-Debug-efea53b953793c474786.json",
+					"name" : "url_launcher_windows_plugin",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "volume_controller_plugin::@0157885d8763999b672e",
+					"jsonFile" : "target-volume_controller_plugin-Debug-5f53f6cc1da24cc78319.json",
+					"name" : "volume_controller_plugin",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "window_manager_plugin::@5d5a3d495045ca23c295",
+					"jsonFile" : "target-window_manager_plugin-Debug-1f7bf02c6a5185b31a31.json",
+					"name" : "window_manager_plugin",
+					"projectIndex" : 9
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Item/AnimeHUBX/windows/out/build/x64-Debug",
+		"source" : "D:/Item/AnimeHUBX/windows"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

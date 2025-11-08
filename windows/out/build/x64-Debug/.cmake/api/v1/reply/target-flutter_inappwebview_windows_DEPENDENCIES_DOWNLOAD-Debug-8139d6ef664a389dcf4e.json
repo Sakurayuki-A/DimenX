@@ -1,0 +1,35 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target"
+		],
+		"files" : 
+		[
+			"flutter/ephemeral/.plugin_symlinks/flutter_inappwebview_windows/windows/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 30,
+				"parent" : 0
+			}
+		]
+	},
+	"id" : "flutter_inappwebview_windows_DEPENDENCIES_DOWNLOAD::@05c90eb2d2ee6783f6e1",
+	"name" : "flutter_inappwebview_windows_DEPENDENCIES_DOWNLOAD",
+	"paths" : 
+	{
+		"build" : "plugins/flutter_inappwebview_windows",
+		"source" : "flutter/ephemeral/.plugin_symlinks/flutter_inappwebview_windows/windows"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
