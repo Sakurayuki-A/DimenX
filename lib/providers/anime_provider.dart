@@ -53,35 +53,15 @@ class AnimeProvider with ChangeNotifier {
     try {
       print('AnimeProvider: 开始加载Bangumi推荐数据');
       
-      // 获取当季热门动画
-      final seasonalAnime = await _bangumiService.getSeasonalAnime(limit: 10);
+      // 获取当季动画作为推荐内容
+      final seasonalAnime = await _bangumiService.getSeasonalAnime(limit: 20);
       
-      // 获取热门动画排行
-      final popularAnime = await _bangumiService.getPopularAnime(limit: 10);
-      
-      // 合并并去重
-      final Set<String> seenIds = {};
-      _bangumiRecommendations = [];
-      
-      // 先添加当季动画
-      for (final anime in seasonalAnime) {
-        if (!seenIds.contains(anime.id)) {
-          seenIds.add(anime.id);
-          _bangumiRecommendations.add(anime);
-        }
-      }
-      
-      // 再添加热门动画
-      for (final anime in popularAnime) {
-        if (!seenIds.contains(anime.id) && _bangumiRecommendations.length < 20) {
-          seenIds.add(anime.id);
-          _bangumiRecommendations.add(anime);
-        }
-      }
+      _bangumiRecommendations = seasonalAnime;
       
       print('AnimeProvider: 成功加载 ${_bangumiRecommendations.length} 个Bangumi推荐');
     } catch (e) {
       print('AnimeProvider: 加载Bangumi推荐失败: $e');
+      _bangumiRecommendations = [];
       // 不抛出异常，允许应用继续使用模拟数据
     }
   }

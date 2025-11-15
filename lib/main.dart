@@ -11,6 +11,7 @@ import 'providers/theme_provider.dart';
 import 'providers/source_rule_provider.dart';
 import 'services/video_extractor.dart';
 import 'services/cache_manager.dart';
+import 'services/app_lifecycle_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,6 +37,9 @@ void main() async {
   
   // 初始化MediaKit
   MediaKit.ensureInitialized();
+  
+  // 初始化应用生命周期管理
+  AppLifecycleService().initialize();
   
   // 初始化MediaKit Native Event Loop (Windows)
   if (Platform.isWindows) {
@@ -91,6 +95,9 @@ class _AnimeHubXAppState extends State<AnimeHubXApp> with WidgetsBindingObserver
   void _performGlobalCleanup() {
     Future.microtask(() async {
       try {
+        // 使用新的生命周期服务进行清理
+        AppLifecycleService().onAppExit();
+        
         // 清理缓存
         CacheManager().clearAllCache();
         
