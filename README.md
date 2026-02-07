@@ -11,16 +11,26 @@
   - 多策略标题提取和验证
   - 系列作品智能去重和分组
   - 支持自定义搜索规则
+  - 智能缓存机制（2分钟有效期）
+  - 支持静态/动态页面混合加载
 - **智能视频提取** - V2 模块化架构
   - 自动检测和提取 m3u8/mp4 视频链接
   - 支持多层 iframe 递归解析
   - 反调试和 URL 监控机制
-  - 智能超时和提前完成策略
+  - 智能超时和快速完成策略（100ms 响应）
+  - 支持字节跳动 CDN 签名链接识别
+  - 自动 URL 拼接和域名识别
 - **多源播放** - 支持多个动漫播放源切换
+  - 底部弹出式播放源选择
+  - 自动搜索和在线状态检测
+  - 多路线智能切换
+  - 实时加载动画和状态提示
 - **视频播放** - 基于 media_kit 的高性能播放器
   - 支持全屏播放和画中画
   - 流畅的播放控制
-  - 集数快速切换
+  - 集数快速切换（右侧滑出式选择器）
+  - 路线优先选择（先选路线再选集数）
+  - 自动播放控制（等待用户选择集数）
 - **收藏管理** - 收藏喜爱的动漫，本地持久化存储
 - **观看历史** - 自动记录观看历史，支持清除功能
 - **番剧日历** - 集成 Bangumi API，查看番剧更新时间表
@@ -88,16 +98,19 @@ lib/
 │   └── theme_provider.dart            # 主题管理
 ├── services/                          # 业务服务
 │   ├── anime_search_service.dart      # 搜索服务 V2（已重构）
-│   ├── anime_detail_service.dart      # 详情服务
+│   ├── anime_detail_service.dart      # 详情服务（智能集数提取）
 │   ├── bangumi_api_service.dart       # Bangumi API 服务
 │   ├── bangumi_calendar_service.dart  # 番剧日历服务
 │   ├── bangumi_comment_service.dart   # 评论服务
 │   ├── cache_manager.dart             # 缓存管理
 │   ├── app_lifecycle_service.dart     # 应用生命周期
 │   ├── video_extractor.dart           # 视频提取器 V2（已重构）
+│   ├── spa_episode_extractor.dart     # SPA 页面集数提取器
 │   ├── search/                        # 搜索服务 V2（模块化）
 │   │   ├── anime_search_service_v2.dart  # 搜索协调器
-│   │   ├── html_fetcher.dart             # HTML 请求
+│   │   ├── html_fetcher.dart             # HTML 请求（静态）
+│   │   ├── html_fetcher_dynamic.dart     # HTML 请求（动态/WebView）
+│   │   ├── html_fetcher_hybrid.dart      # HTML 请求（混合模式）
 │   │   ├── node_selector.dart            # 节点选择
 │   │   ├── node_filter.dart              # 节点过滤
 │   │   ├── title_extractor.dart          # 标题提取
@@ -110,7 +123,7 @@ lib/
 │   └── video_extraction/              # 视频提取 V2（模块化）
 │       ├── video_extractor_v2.dart       # 提取协调器
 │       ├── extraction_logger.dart        # 提取日志
-│       ├── url_detector.dart             # URL 检测
+│       ├── url_detector.dart             # URL 检测（支持字节跳动 CDN）
 │       ├── javascript_injector.dart      # JS 注入
 │       ├── webview_manager.dart          # WebView 管理
 │       └── scripts/                      # JavaScript 脚本
@@ -133,7 +146,7 @@ lib/
 │   ├── anime_card.dart                # 动漫卡片
 │   ├── anime_selection_dialog.dart    # 动漫选择对话框
 │   ├── source_selection_dialog.dart   # 播放源选择对话框
-│   ├── source_selection_sidebar.dart  # 播放源侧边栏
+│   ├── source_selection_sidebar.dart  # 播放源底部弹出栏（带自动搜索）
 │   ├── bangumi_comments_section.dart  # 评论区组件
 │   ├── skeleton_loader.dart           # 骨架屏加载器
 │   └── skeleton_demo.dart             # 骨架屏演示
@@ -146,6 +159,9 @@ docs/                                  # 文档
 ├── SEARCH_PRECISION_IMPROVEMENTS.md   # 搜索精度改进
 ├── V1_VS_V2_COMPARISON.md             # V1 vs V2 对比
 ├── VIDEO_EXTRACTOR_REFACTORING.md     # 视频提取重构
+├── DYNAMIC_LOADING_GUIDE.md           # 动态加载指南
+├── DYNAMIC_LOADING_OPTIMIZATION.md    # 动态加载优化
+├── BANGUMI_API_OPTIMIZATION.md        # Bangumi API 优化
 └── BEFORE_AFTER_COMPARISON.md         # 改进前后对比
 ```
 
@@ -382,6 +398,33 @@ final result = await extractor.extractVideoUrl(
 - `chore`: 构建/工具相关
 
 ## 📝 更新日志
+
+### V2.1.0 (2026-02-07) 🎉 重大更新
+#### 🚀 播放体验优化
+- ✨ **全新播放源选择界面** - 底部弹出式设计，更符合现代 UI 规范
+- ✨ **自动搜索和在线检测** - 打开播放源选择时自动搜索所有规则，实时显示在线状态
+- ✨ **TabBar 路线切换** - 使用 Flutter 原生 TabBar 组件，支持多路线平滑切换
+- ✨ **智能集数选择** - 先选择路线，再选择集数，流程更清晰
+- ✨ **右侧滑出式集数选择器** - 4列网格布局，快速定位集数
+- ✨ **自动播放控制** - 进入播放器后等待用户选择集数，不再自动播放
+
+#### ⚡ 性能优化
+- ⚡ **视频提取速度提升** - 发现视频链接后 100ms 快速完成，不再等待完整页面加载
+- ⚡ **搜索缓存优化** - 只缓存有效结果（>200字符），2分钟有效期
+- ⚡ **动态加载优化** - 超时从 20s 降至 15s，等待时间从 5s 降至 3s
+- ⚡ **智能内容稳定性检测** - 检测页面内容是否稳定，避免过早返回
+
+#### 🔧 功能增强
+- ✨ **字节跳动 CDN 支持** - 识别 bytetos.com、imcloud-file 等签名链接
+- ✨ **智能 URL 拼接** - 从详情页 URL 提取域名，避免错误拼接
+- ✨ **并发控制** - 动态加载最多同时 2 个请求，避免资源浪费
+- ✨ **资源加载优化** - 禁用图片、CSS、字体加载，加快页面渲染
+
+#### 🐛 Bug 修复
+- 🐛 修复播放源 URL 拼接错误（使用错误的 baseURL）
+- 🐛 修复视频提取后继续执行无用操作的问题
+- 🐛 修复搜索结果缓存无效结果的问题
+- 🐛 修复动态加载超时时间过长的问题
 
 ### V2.0.0 (2026-01-31)
 - ✨ 重构搜索服务架构，搜索精度提升至 90%+
